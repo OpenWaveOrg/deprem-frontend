@@ -1,2 +1,2 @@
-# deprem-frontend
-deprem projesi frontend reposu.
+# deprem-data
+deprem projesi data reposu.
