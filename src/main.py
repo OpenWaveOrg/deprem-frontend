@@ -74,7 +74,7 @@ def draw_map(coordinates_data: dict):
                         folium.CircleMarker(
                             tooltip=f"{x['konum_ilce']}",
                             location=[x["lat"], x["lon"]],
-                            popup=f"Kişi Sayısı: {popup1}",
+                            popup=f"Kişi Sayısı: {popup1} \n",
                                   f"Apartman: {x['apartman']}",
                             radius=10,
                             fill=True,
