@@ -33,7 +33,7 @@ def sidebar():
                 current_sidebar_values.insert(0, "")
 
             if "_" in i:
-                j = i.replace("_", " ").capitalize()
+                j = i.replace("_", " ").replace("konum","").capitalize()
             else:
                 j = i.capitalize()
 
