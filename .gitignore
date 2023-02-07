@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea/vcs.xml
+.idea/modules.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/deprem-frontend.iml
