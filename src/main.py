@@ -70,10 +70,11 @@ def draw_map(coordinates_data: dict):
                             and x["lat"] != ""
                             and x["lon"] != ""
                     ):
+                        popup1 = "" if x['kisi_sayisi'] == "Bilgi yok" else x['kisi_sayisi']
                         folium.CircleMarker(
                             tooltip=f"{x['konum_ilce']}",
                             location=[x["lat"], x["lon"]],
-                            popup=f"Kişi Sayısı: {x['kisi_sayisi']}"
+                            popup=f"Kişi Sayısı: {popup1}",
                                   f"Apartman: {x['apartman']}",
                             radius=10,
                             fill=True,
