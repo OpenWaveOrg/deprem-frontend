@@ -1,5 +1,6 @@
 <div align="center">
     <h1>Deprem Frontend</h1>
+    <img src=https://user-images.githubusercontent.com/48323786/217369578-ea51f7b5-08ab-4fcb-aa3e-c6e3f6a2d1cf.png>
     <h3>Basit arayüzlü Deprem projesinin frontendi.</h3>
 </div>
 
