@@ -74,7 +74,7 @@ def draw_map(coordinates_data: dict):
                             tooltip=f"{x['konum_ilce']}",
                             location=[x["lat"], x["lon"]],
                             popup=f"Kişi Sayısı: {x['kisi_sayisi']}"
-                                  f" Kat: {x['kat']}",
+                                  f"Apartman: {x['apartman']}",
                             radius=10,
                             fill=True,
                             fill_color="red",
