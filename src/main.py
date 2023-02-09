@@ -60,7 +60,31 @@ def sidebar():
 def draw_map(coordinates_data: dict):
     if coordinates_data:
         m = folium.Map(location=[37.7981263, 36.1829598], zoom_start=6)
+                with st.expander("Show Data"):
+            for x in coordinates_data:
+                try:
+                    if (
+                            x["lat"]
+                            and x["lon"]
+                            and x["lat"] != ""
+                            and x["lon"] != ""
+                    ):
+                        popup1 = "" if x['kisi_sayisi'] == "Bilgi yok" else x['kisi_sayisi']
+                        folium.CircleMarker(
+                            tooltip=f"{x['konum_ilce']}",
+                            location=[x["lat"], x["lon"]],
+                            popup=f"Kişi Sayısı: {popup1}\nApartman: {x['apartman']}",
+                            radius=10,
+                            fill=True,
+                            fill_color="red",
+                            color="red",
+                            fill_opacity=0.5,
+                        ).add_to(m)
 
+
+                        
+                except KeyError:
+                    pass
         
 
         st_folium.folium_static(m, width=1400, height=600)
