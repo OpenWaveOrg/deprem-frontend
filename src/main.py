@@ -61,49 +61,7 @@ def draw_map(coordinates_data: dict):
     if coordinates_data:
         m = folium.Map(location=[37.7981263, 36.1829598], zoom_start=6)
 
-        with st.expander("Show Data"):
-            for x in coordinates_data:
-                try:
-                    if (
-                            x["lat"]
-                            and x["lon"]
-                            and x["lat"] != ""
-                            and x["lon"] != ""
-                    ):
-                        popup1 = "" if x['kisi_sayisi'] == "Bilgi yok" else x['kisi_sayisi']
-                        folium.CircleMarker(
-                            tooltip=f"{x['konum_ilce']}",
-                            location=[x["lat"], x["lon"]],
-                            popup=f"Kişi Sayısı: {popup1}\nApartman: {x['apartman']}",
-                            radius=10,
-                            fill=True,
-                            fill_color="red",
-                            color="red",
-                            fill_opacity=0.5,
-                        ).add_to(m)
-
-                    if x['lat'] and x['lon'] and x['lat'] != '' and x['lon'] != '':
-                        location = f"http://maps.google.com/?ll={x['lat']},{x['lon']}"
-                    else:
-                        location = "Konum Bilgisi Yok"
-
-                    st.info(f"""
-                    İl: {x['konum_il']} |
-                    İlçe: {x['konum_ilce']} |
-                    Mahalle: {x['konum_mahalle']} \n
-                    İsim Soyisim: {x['isimsoyisim']} |
-                    Kişi Sayısı: {x['kisi_sayisi']} |
-                    Telefon Numrası: {x['telefon']} \n
-                    Adres: {x['adres']} |
-                    Apartman: {x['apartman']} |
-                    Sokak: {x['sokak']} |
-                    Blok: {x['blok_no']} |
-                    Kat: {x['kat']} \n
-                    Google Maps Linki: {location}
-                    """)
-
-                except KeyError:
-                    pass
+        
 
         st_folium.folium_static(m, width=1400, height=600)
 
