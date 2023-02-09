@@ -60,7 +60,7 @@ def sidebar():
 def draw_map(coordinates_data: dict):
     if coordinates_data:
         m = folium.Map(location=[37.7981263, 36.1829598], zoom_start=6)
-                with st.expander("Show Data"):
+        with st.expander("Show Data"):
             for x in coordinates_data:
                 try:
                     if (
