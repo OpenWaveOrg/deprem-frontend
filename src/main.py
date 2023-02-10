@@ -76,19 +76,57 @@ def draw_map(coordinates_data: dict):
                         folium.Marker(
                             location=[x["lat"], x["lon"]],
                             popup=f"""
-                            İl: {x['konum_il']} |
-                            İlçe: {x['konum_ilce']} |
-                            Mahalle: {x['konum_mahalle']} <br>
-                            İsim Soyisim: {x['isimsoyisim']} |
-                            Kişi Sayısı: {x['kisi_sayisi']} |
-                            Telefon Numrası: {x['telefon']} <br>
-                            Adres: {x['adres']} |
-                            Apartman: {x['apartman']} |
-                            Sokak: {x['sokak']} |
-                            Blok: {x['blok_no']} |
-                            Kat: {x['kat']} <br>
-                            Google Maps Linki: {location}
-                            """,
+                        <table>
+                        <tr>
+                        <td>İl</td>
+                        <td>{x['konum_il']}</td>
+                        </tr>
+                        <tr>
+                        <td>İlçe</td>
+                        <td>{x['konum_ilce']}</td>
+                        </tr>
+                        <tr>
+                        <td>Mahalle</td>
+                        <td>{x['konum_mahalle']}</td>
+                        </tr>
+                        <tr>
+                        <td>İsim Soyisim</td>
+                        <td>{x['isimsoyisim']}</td>
+                        </tr>
+                        <tr>
+                        <td>Kişi Sayısı</td>
+                        <td>{x['kisi_sayisi']}</td>
+                        </tr>
+                        <tr>
+                        <td>Telefon Numrası</td>
+                        <td>{x['telefon']}</td>
+                        </tr>
+                        <tr>
+                        <td>Adres</td>
+                        <td>{x['adres']}</td>
+                        </tr>
+                        <tr>
+                        <td>Apartman</td>
+                        <td>{x['apartman']}</td>
+                        </tr>
+                        <tr>
+                        <td>Sokak</td>
+                        <td>{x['sokak']}</td>
+                        </tr>
+                        <tr>
+                        <td>Blok</td>
+                        <td>{x['blok_no']}</td>
+                        </tr>
+                        <tr>
+                        <td>Kat</td>
+                        <td>{x['kat']}</td>
+                        </tr>
+                        <tr>
+                        <td>Google Maps Linki</td>
+                        <td>{location}</td>
+                        </tr>
+                        </table>
+                        """,
                             tooltip=f"{x['konum_ilce']}",
                         ).add_to(m)
 
