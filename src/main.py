@@ -69,18 +69,28 @@ def draw_map(coordinates_data: dict):
                             and x["lat"] != ""
                             and x["lon"] != ""
                     ):
-                        popup1 = "" if x['kisi_sayisi'] == "Bilgi yok" else x['kisi_sayisi']
-                        folium.CircleMarker(
-                            tooltip=f"{x['konum_ilce']}",
+                        if x['lat'] and x['lon'] and x['lat'] != '' and x['lon'] != '':
+                            location = f"http://maps.google.com/?ll={x['lat']},{x['lon']}"
+                        else:
+                            location = "Konum Bilgisi Yok"
+                        folium.Marker(
                             location=[x["lat"], x["lon"]],
-                            popup=f"Kişi Sayısı: {popup1}\nApartman: {x['apartman']}",
-                            radius=10,
-                            fill=True,
-                            fill_color="red",
-                            color="red",
-                            fill_opacity=0.5,
+                            popup=f"""
+                            İl: {x['konum_il']} |
+                            İlçe: {x['konum_ilce']} |
+                            Mahalle: {x['konum_mahalle']} <br>
+                            İsim Soyisim: {x['isimsoyisim']} |
+                            Kişi Sayısı: {x['kisi_sayisi']} |
+                            Telefon Numrası: {x['telefon']} <br>
+                            Adres: {x['adres']} |
+                            Apartman: {x['apartman']} |
+                            Sokak: {x['sokak']} |
+                            Blok: {x['blok_no']} |
+                            Kat: {x['kat']} <br>
+                            Google Maps Linki: {location}
+                            """,
+                            tooltip=f"{x['konum_ilce']}",
                         ).add_to(m)
-
 
                         
                 except KeyError:
